@@ -86,7 +86,7 @@ public class MPGUI1 extends JFrame {
 
 	                                try {
 	                                    // Specify the path to your image file
-	                                    String imagePath = "C:\\Users\\gaura\\OneDrive\\Pictures\\Saved Pictures\\GUI_B.png";
+	                                    String imagePath = "C:\\Users\\gaura\\OneDrive\\Pictures\\Saved Pictures\\sd.png";
 
 	                                    // Load the background image
 	                                    ImageIcon backgroundImage = new ImageIcon(imagePath);
@@ -100,7 +100,7 @@ public class MPGUI1 extends JFrame {
 	                                    headingPanel.setLayout(new BorderLayout());
 
 	                                    // Create the JLabel for the heading
-	                                    JLabel heading = new JLabel("Lets Understand");
+	                                    JLabel heading = new JLabel("Source and Destination");
 	                                    heading.setHorizontalAlignment(SwingConstants.CENTER); // Center align the text
 	                                    heading.setFont(new Font("Arial", Font.BOLD, 20)); 
 	                                    heading.setForeground(Color.WHITE); // Set the text color
@@ -130,7 +130,7 @@ public class MPGUI1 extends JFrame {
 
 	                                try {
 	                                    // Specify the path to your image file
-	                                    String imagePath = "C:\\Users\\gaura\\OneDrive\\Pictures\\Saved Pictures\\GUI_B.png";
+	                                    String imagePath = "C:\\Users\\gaura\\OneDrive\\Pictures\\Saved Pictures\\size.png";
 
 	                                    // Load the background image
 	                                    ImageIcon backgroundImage = new ImageIcon(imagePath);
@@ -144,7 +144,7 @@ public class MPGUI1 extends JFrame {
 	                                    headingPanel.setLayout(new BorderLayout());
 
 	                                    // Create the JLabel for the heading
-	                                    JLabel heading = new JLabel("Lets Understand");
+	                                    JLabel heading = new JLabel("Packet Size");
 	                                    heading.setHorizontalAlignment(SwingConstants.CENTER); // Center align the text
 	                                    heading.setFont(new Font("Arial", Font.BOLD, 20)); 
 	                                    heading.setForeground(Color.WHITE); // Set the text color
@@ -175,7 +175,7 @@ public class MPGUI1 extends JFrame {
 
 	                                try {
 	                                    // Specify the path to your image file
-	                                    String imagePath = "C:\\Users\\gaura\\OneDrive\\Pictures\\Saved Pictures\\GUI_B.png";
+	                                    String imagePath = "C:\\Users\\gaura\\OneDrive\\Pictures\\Saved Pictures\\dat.png";
 
 	                                    // Load the background image
 	                                    ImageIcon backgroundImage = new ImageIcon(imagePath);
@@ -189,7 +189,7 @@ public class MPGUI1 extends JFrame {
 	                                    headingPanel.setLayout(new BorderLayout());
 
 	                                    // Create the JLabel for the heading
-	                                    JLabel heading = new JLabel("Lets Understand");
+	                                    JLabel heading = new JLabel("Transferred Data");
 	                                    heading.setHorizontalAlignment(SwingConstants.CENTER); // Center align the text
 	                                    heading.setFont(new Font("Arial", Font.BOLD, 20)); 
 	                                    heading.setForeground(Color.WHITE); // Set the text color
@@ -220,7 +220,7 @@ public class MPGUI1 extends JFrame {
 
 	                                try {
 	                                    // Specify the path to your image file
-	                                    String imagePath = "C:\\Users\\gaura\\OneDrive\\Pictures\\Saved Pictures\\GUI_B.png";
+	                                    String imagePath = "C:\\Users\\gaura\\OneDrive\\Pictures\\Saved Pictures\\prot.png";
 
 	                                    // Load the background image
 	                                    ImageIcon backgroundImage = new ImageIcon(imagePath);
@@ -234,7 +234,7 @@ public class MPGUI1 extends JFrame {
 	                                    headingPanel.setLayout(new BorderLayout());
 
 	                                    // Create the JLabel for the heading
-	                                    JLabel heading = new JLabel("Lets Understand");
+	                                    JLabel heading = new JLabel("Protocol");
 	                                    heading.setHorizontalAlignment(SwingConstants.CENTER); // Center align the text
 	                                    heading.setFont(new Font("Arial", Font.BOLD, 20)); 
 	                                    heading.setForeground(Color.WHITE); // Set the text color
