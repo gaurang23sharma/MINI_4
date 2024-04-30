@@ -91,11 +91,11 @@ public class MPGUI1 extends JFrame {
 	                                    // Load the background image
 	                                    ImageIcon backgroundImage = new ImageIcon(imagePath);
 	                                    JLabel backgroundLabel = new JLabel(backgroundImage);
-	                                    backgroundLabel.setBounds(0, 0, 400, 500);
+	                                    backgroundLabel.setBounds(0, 0, 800, 500);
 
 	                                    // Create a JPanel for the heading and background color
 	                                    JPanel headingPanel = new JPanel();
-	                                    headingPanel.setBounds(450, 10, 200, 30);
+	                                    headingPanel.setBounds(350, 10, 500, 30);
 	                                    headingPanel.setBackground(Color.BLUE); // Set the background color
 	                                    headingPanel.setLayout(new BorderLayout());
 
@@ -347,21 +347,35 @@ public class MPGUI1 extends JFrame {
 	                        headingPanel.setBounds(450, 10, 200, 30);
 	                        headingPanel.setBackground(Color.BLUE); // Set the background color
 	                        headingPanel.setLayout(new BorderLayout());
+	                        
+	                        JPanel headingPanel2 = new JPanel();
+	                        headingPanel2.setBounds(50, 220, 1000, 30);
+	                        headingPanel2.setBackground(Color.BLUE); // Set the background color
+	                        headingPanel2.setLayout(new BorderLayout());
 
+
+	                        JButton res1 = new JButton("Start Capturing");
 	                        // Create the JLabel for the heading
 	                        JLabel heading = new JLabel("Capture packet");
 	                        heading.setHorizontalAlignment(SwingConstants.CENTER); // Center align the text
 	                        heading.setFont(new Font("Arial", Font.BOLD, 20));
 	                        heading.setForeground(Color.WHITE); // Set the text color
+	                        
+	                        JLabel heading2 = new JLabel("Click to start capturing packets");
+	                        heading2.setHorizontalAlignment(SwingConstants.CENTER); // Center align the text
+	                        heading2.setFont(new Font("Arial", Font.BOLD, 20));
+	                        heading2.setForeground(Color.WHITE); // Set the text color
 
 	                        headingPanel.add(heading);
-
+	                        headingPanel2.add(heading2);
 	                        // Add components to the frame
 	                        frame2.setContentPane(backgroundLabel);
-	                        frame2.getContentPane().add(headingPanel); // Add the headingPanel instead of the heading JLabel
+	                        frame2.getContentPane().add(headingPanel);
+	                        frame2.getContentPane().add(headingPanel2);// Add the headingPanel instead of the heading JLabel
 	                        frame2.setSize(1200, 950); // Increased frame size to accommodate the buttons
 	                        frame2.setTitle("Capture Packet");
-	                        
+	                        frame2.getContentPane().add(res1);
+	                        res1.setBounds(450, 320, 200, 50);
 	                        frame2.getContentPane().setLayout(null);
 	                        frame2.setVisible(true);
 	                        
