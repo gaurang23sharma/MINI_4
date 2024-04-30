@@ -464,11 +464,25 @@ public class MPGUI1 extends JFrame {
 	                        heading.setFont(new Font("Arial", Font.BOLD, 20));
 	                        heading.setForeground(Color.WHITE); // Set the text color
 
+	                        // Create a JPanel for the paragraph label with background color
+	                        JPanel paragraphPanel = new JPanel();
+	                        paragraphPanel.setBounds(50, 50, 1000, 100);
+	                        paragraphPanel.setBackground(Color.LIGHT_GRAY); // Set the background color
+
+	                        // Create a JLabel for the paragraph
+	                        JLabel paragraph = new JLabel("<html>A packet capturing tool is a software used to analyse incoming and outgoing packets.<br>"
+	                                +"Check<br>"
+	                        		+ "You can add more details here.</html>");
+	                        paragraph.setHorizontalAlignment(SwingConstants.CENTER); // Center align the text
+	                        paragraph.setFont(new Font("Arial", Font.PLAIN, 16));
+	                        paragraphPanel.add(paragraph);
+
 	                        headingPanel.add(heading);
 
 	                        // Add components to the frame
 	                        frame3.setContentPane(backgroundLabel);
 	                        frame3.getContentPane().add(headingPanel); // Add the headingPanel instead of the heading JLabel
+	                        frame3.getContentPane().add(paragraphPanel); // Add the paragraphPanel containing the paragraph JLabel
 
 	                        frame3.setSize(1200, 950); // Increased frame size to accommodate the buttons
 	                        frame3.setTitle("More");
@@ -477,8 +491,9 @@ public class MPGUI1 extends JFrame {
 	                    } catch (Exception ex) {
 	                        ex.printStackTrace();
 	                    }
-	                } // Missing closing parenthesis here was the error
+	                } // Closing parenthesis for actionPerformed method
 	            });
+
 	            // Add components to the frame
 	            this.setContentPane(backgroundLabel);
 	            this.getContentPane().add(headingPanel); // Add the headingPanel instead of the heading JLabel
