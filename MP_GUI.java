@@ -18,6 +18,17 @@ import javax.swing.*;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 
+import java.io.IOException;
+
+import org.pcap4j.core.NotOpenException;
+import org.pcap4j.core.PacketListener;
+import org.pcap4j.core.PcapHandle;
+import org.pcap4j.core.PcapNativeException;
+import org.pcap4j.core.PcapNetworkInterface;
+import org.pcap4j.core.PcapNetworkInterface.PromiscuousMode;
+import org.pcap4j.packet.Packet;
+import org.pcap4j.util.NifSelector;
+
 public class MPGUI1 extends JFrame {
 
 	private static final long serialVersionUID = 1L;
@@ -326,14 +337,9 @@ public class MPGUI1 extends JFrame {
 	            b2.setBounds(300, 230, 500, 40);
 	            b2.addActionListener(new ActionListener() {
 	                public void actionPerformed(ActionEvent e) {
-	                    
-	                	JFrame frame2 = new JFrame();
+	                    JFrame frame2 = new JFrame();
 
 	                    try {
-
-
-	                        
-	                    	
 	                        // Specify the path to your image file
 	                        String back_img = "C:\\Users\\gaura\\OneDrive\\Pictures\\Saved Pictures\\GUI_B.png";
 
@@ -353,7 +359,6 @@ public class MPGUI1 extends JFrame {
 	                        headingPanel2.setBackground(Color.BLUE); // Set the background color
 	                        headingPanel2.setLayout(new BorderLayout());
 
-
 	                        JButton res1 = new JButton("Start Capturing");
 	                        // Create the JLabel for the heading
 	                        JLabel heading = new JLabel("Capture packet");
@@ -369,6 +374,49 @@ public class MPGUI1 extends JFrame {
 	                        headingPanel.add(heading);
 	                        headingPanel2.add(heading2);
 	                        // Add components to the frame
+	                        
+
+	                        res1.addActionListener(new ActionListener() {
+	                            public void actionPerformed(ActionEvent e) {
+	                                PcapNetworkInterface device = null;
+	                                try {
+	                                    device = new NifSelector().selectNetworkInterface();
+	                                } catch (IOException e1) {
+	                                    e1.printStackTrace();
+	                                }
+	                                
+	                                try {
+	                                    // Open the device and get a handle
+	                                    int snapshotLength = 65536; // in bytes   
+	                                    int readTimeout = 50; // in milliseconds                   
+	                                    final PcapHandle handle;
+	                                    handle = device.openLive(snapshotLength, PromiscuousMode.PROMISCUOUS, readTimeout);
+
+	                                    // Create a listener that defines what to do with the received packets
+	                                    PacketListener listener = new PacketListener() {
+	                                        @Override
+	                                        public void gotPacket(Packet packet) {
+	                                            // Override the default gotPacket() function and process packet
+	                                            System.out.println(handle.getTimestampInts());
+	                                            System.out.println(packet);
+	                                        }
+	                                    };
+
+	                                    // Tell the handle to loop using the listener we created
+	                                    try {
+	                                        int maxPackets = 50;
+	                                        handle.loop(maxPackets, listener);
+	                                    } catch (InterruptedException e1) {
+	                                        e1.printStackTrace();
+	                                    }
+
+	                                    // Cleanup when complete
+	                                    handle.close();
+	                                } catch (PcapNativeException | NotOpenException ex) {
+	                                    ex.printStackTrace();
+	                                }
+	                            }
+	                        });
 	                        frame2.setContentPane(backgroundLabel);
 	                        frame2.getContentPane().add(headingPanel);
 	                        frame2.getContentPane().add(headingPanel2);// Add the headingPanel instead of the heading JLabel
@@ -378,13 +426,16 @@ public class MPGUI1 extends JFrame {
 	                        res1.setBounds(450, 320, 200, 50);
 	                        frame2.getContentPane().setLayout(null);
 	                        frame2.setVisible(true);
-	                        
-
 	                    } catch (Exception ex) {
 	                        ex.printStackTrace();
 	                    }
-	                } // Missing closing parenthesis here was the error
+	                }
 	            });
+
+
+	                        
+
+	        
 
 	            JButton b3 = new JButton("More");
 	            b3.setBounds(300, 330, 500, 40);
@@ -447,7 +498,6 @@ public class MPGUI1 extends JFrame {
 
 
 	    }
-	    
 	
 
 	
