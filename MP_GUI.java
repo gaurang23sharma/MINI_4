@@ -33,9 +33,7 @@ public class MPGUI1 extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Launch the application.
-	 */
+
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -49,7 +47,7 @@ public class MPGUI1 extends JFrame {
 		});
 	}
 
-	//Create FRame
+
 
 	    MPGUI1() {
 	        
